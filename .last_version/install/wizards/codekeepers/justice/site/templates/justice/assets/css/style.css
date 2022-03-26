@@ -3501,6 +3501,7 @@ body.active-dark-mode-decision,
 
 .page-wrapper {
     position: relative;
+    overflow-x: hidden;
 }
 header.navs {
     position: absolute;
@@ -5263,4 +5264,10 @@ h5 {
 
 .licence-list {
     margin-bottom: 30px;
+}
+
+/*test*/
+.col-lg-10 .main-slider-col {
+    padding-left: 0;
+    padding-right: 0;
 }

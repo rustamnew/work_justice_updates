@@ -212,24 +212,24 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
                         array("MODE" => "php"));?>
                         
                         <?$APPLICATION->IncludeComponent(
-                                "codekeepers:menu.justice", 
-                                "menu_footer", 
-                                array(
-                                    "COMPONENT_TEMPLATE" => "menu_footer",
-                                    "ROOT_MENU_TYPE" => "bottom3",
-                                    "MENU_CACHE_TYPE" => "N",
-                                    "MENU_CACHE_TIME" => "3600",
-                                    "MENU_CACHE_USE_GROUPS" => "Y",
-                                    "MENU_CACHE_GET_VARS" => array(
-                                    ),
-                                    "MAX_LEVEL" => "1",
-                                    "CHILD_MENU_TYPE" => "left",
-                                    "USE_EXT" => "N",
-                                    "DELAY" => "N",
-                                    "ALLOW_MULTI_SELECT" => "N"
+                            "codekeepers:menu.justice", 
+                            "menu_footer", 
+                            array(
+                                "COMPONENT_TEMPLATE" => "menu_footer",
+                                "ROOT_MENU_TYPE" => "bottom3",
+                                "MENU_CACHE_TYPE" => "N",
+                                "MENU_CACHE_TIME" => "3600",
+                                "MENU_CACHE_USE_GROUPS" => "Y",
+                                "MENU_CACHE_GET_VARS" => array(
                                 ),
-                                false
-                            );?>
+                                "MAX_LEVEL" => "1",
+                                "CHILD_MENU_TYPE" => "left",
+                                "USE_EXT" => "N",
+                                "DELAY" => "N",
+                                "ALLOW_MULTI_SELECT" => "N"
+                            ),
+                            false
+                        );?>
                     </div>
                 </div>
             </footer>
@@ -326,7 +326,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
         <div class="summonedFormWrap" id="summonedFormWrap">
             <?$APPLICATION->IncludeComponent(
-                "codekeepers:main.feedback.justice", 
+                "bitrix:main.feedback", 
                 "feedback-form-popup", 
                 array(
                     "AJAX_MODE" => "Y",

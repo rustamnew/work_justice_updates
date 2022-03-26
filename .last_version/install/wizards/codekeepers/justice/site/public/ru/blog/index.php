@@ -49,7 +49,7 @@ $APPLICATION->SetTitle("Блог");
 		"LIST_FIELD_CODE" => array(
 			0 => "ID",
 			1 => "TAGS",
-			2 => "",
+			2 => "DATE_CREATE",
 		),
 		"LIST_PROPERTY_CODE" => array(
 			0 => "",

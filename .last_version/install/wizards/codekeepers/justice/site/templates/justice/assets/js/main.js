@@ -121,10 +121,10 @@ $(document).ready(function () {
         loop: true,
         nav: true,
         margin: 0,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 4000,
         smartSpeed: 1000,
-        autoplayHoverPause: true,
+        autoplayHoverPause: false,
         mouseDrag: true,
         touchDrag: true,
         navText: ['<i class="flaticon-left-arrow"></i>', '<i class="flaticon-right-arrow"></i>'],
@@ -143,6 +143,7 @@ $(document).ready(function () {
         }
     });
 
+/*
     // :: Animation Header
     $('.header-owl').on('translate.owl.carousel', function () {
         $('.header-owl .banner').removeClass('animated fadeOut').css('opacity', '0');
@@ -158,6 +159,7 @@ $(document).ready(function () {
         $('.header .banner .about-website').addClass('animated fadeInDown').css('opacity', '1');
         $('.header .banner .btn-1').addClass('animated fadeInDown').css('opacity', '1');
     });
+*/
 
     // :: Owl Carousel Plugin
     $('.history-line').owlCarousel({
@@ -483,6 +485,50 @@ $(document).ready(function () {
 
     let summonedSuccess = document.querySelector('#success-icon');
 
+    $("#feedback-form-popup").submit(function (e) {
+        e.preventDefault()
+        let valide = true
+
+        if ($("#feedback-form-popup").find(".captcha-wrap").length > 0) {
+            valide = false
+
+            let n = 0
+
+			if ($("#feedback-form").find(".captcha-wrap").length > 0) {
+				n++
+			}
+			if ($("#feedback-form-short").find(".captcha-wrap").length > 0) {
+				n++
+			}
+			if ($("#feedback-form-contacts").find(".captcha-wrap").length > 0) {
+				n++
+			}
+
+            let response = grecaptcha.getResponse(n)
+            if(response.length == 0) {
+                console.log('wrong')
+            } else {
+                valide = true
+            }
+	    } 
+    
+        if (valide) {
+            $.ajax({
+                url: $(this).attr("action"),
+                data: $(this).serialize() + "&submit=Отправить",
+                type: 'POST',
+                success: function (data) {
+                    summonedSuccess.classList.add('active');
+                    $("#feedback-form-popup")[0].reset();
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+        }
+	})
+
+
     $("#feedback-form").submit(function (e) {
         e.preventDefault()
         let valide = true
@@ -513,13 +559,14 @@ $(document).ready(function () {
         }
 	})
 
-    $("#feedback-form-popup").submit(function (e) {
+
+    $("#feedback-form-short").submit(function (e) {
         e.preventDefault()
         let valide = true
 
-        if ($("#feedback-form-popup").find(".captcha-wrap").length > 0) {
+        if ($("#feedback-form-short").find(".captcha-wrap").length > 0) {
             valide = false
-            let response = grecaptcha.getResponse(1)
+            let response = grecaptcha.getResponse()
             if(response.length == 0) {
                 console.log('wrong')
             } else {
@@ -534,7 +581,7 @@ $(document).ready(function () {
                 type: 'POST',
                 success: function (data) {
                     summonedSuccess.classList.add('active');
-                    $("#feedback-form-popup")[0].reset();
+                    $("#feedback-form-short")[0].reset();
                 },
                 error: function (data) {
                     console.log(data);
@@ -542,6 +589,7 @@ $(document).ready(function () {
             });
         }
 	})
+
 
     $("#feedback-form-contacts").submit(function (e) {
         e.preventDefault()
@@ -575,35 +623,7 @@ $(document).ready(function () {
         }
 	})
 
-    $("#feedback-form-short").submit(function (e) {
-        e.preventDefault()
-        let valide = true
 
-        if ($("#feedback-form-short").find(".captcha-wrap").length > 0) {
-            valide = false
-            let response = grecaptcha.getResponse()
-            if(response.length == 0) {
-                console.log('wrong')
-            } else {
-                valide = true
-            }
-	    } 
-    
-        if (valide) {
-            $.ajax({
-                url: $(this).attr("action"),
-                data: $(this).serialize() + "&submit=Отправить",
-                type: 'POST',
-                success: function (data) {
-                    summonedSuccess.classList.add('active');
-                    $("#feedback-form-short")[0].reset();
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
-        }
-	})
 
     BX.ready(function(){
         loader = BX('ajax-preloader-wrap');

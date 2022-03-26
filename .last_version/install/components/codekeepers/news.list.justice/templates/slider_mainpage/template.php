@@ -168,7 +168,7 @@ $this->setFrameMode(true);
 						<div class="overlay"></div>
 						<div class="container">
 							<div class="row">
-								<div class="col-lg-10 offset-lg-1">
+								<div class="col-lg-10 offset-lg-1 main-slider-col">
 									<div class="box-hero">
 										<div class="banner banner-3 text-center">
 											<div class="headline-top"><?=$arItem["PROPERTIES"]["subtitle"]["VALUE"]["TEXT"]?></div>
