@@ -326,7 +326,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
         <div class="summonedFormWrap" id="summonedFormWrap">
             <?$APPLICATION->IncludeComponent(
-                "bitrix:main.feedback", 
+                "codekeepers:main.feedback.justice", 
                 "feedback-form-popup", 
                 array(
                     "AJAX_MODE" => "Y",

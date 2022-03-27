@@ -38,7 +38,6 @@ class SelectTemplateStep extends CSelectTemplateWizardStep
 		if (empty($arTemplates))
 			return;
 
-		// ������������� ������ ��-���������
 		$wizard->SetVar("templateID", "justice");
 
 		$templateID = $wizard->GetVar("templateID");
@@ -66,8 +65,7 @@ class SelectTemplateStep extends CSelectTemplateWizardStep
 
 		foreach ($arTemplates as $templateID => $arTemplate)
 		{
-			// ������� ������ ���� ������, ��������� ��-���������
-			// ��������� �� ����������
+
 			if($templateID !== $defaultTemplateID) continue;
 
 			if ($defaultTemplateID == "")
@@ -265,25 +263,13 @@ class FinishStep extends CFinishWizardStep
 		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/contacts/index.php"; 
 		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
 
-		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/inc/blocks/form.php"; 
-		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
-
 		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/templates/justice/footer.php"; 
 		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
 
-		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/templates/justice/components/codekeepers/catalog.element.justice/catalog_detail/template.php"; 
+		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/components/codekeepers/news.list.justice/templates/discount/template.php"; 
 		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
 
-		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/templates/justice/components/codekeepers/news.detail.justice/sale/template.php"; 
-		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
-
-		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/templates/justice/components/codekeepers/news.justice/specialists/news.php"; 
-		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
-
-		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/templates/justice/components/codekeepers/news.justice/specialists/section.php"; 
-		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
-		
-		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/templates/justice/components/codekeepers/news.list.justice/sale/template.php"; 
+		$iblockXMLFile = $_SERVER["DOCUMENT_ROOT"].WIZARD_SITE_DIR."/bitrix/components/codekeepers/news.list.justice/templates/timeline-block/template.php"; 
 		CWizardUtil::ReplaceMacros($iblockXMLFile, array("FORM_ID" => $FORM_ID));
 		
 

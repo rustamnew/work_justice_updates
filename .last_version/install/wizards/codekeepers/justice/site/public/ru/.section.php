@@ -1,5 +1,5 @@
 <?
-$sSectionName = "";
+$sSectionName = "Ãëàâíàÿ";
 $arDirProperties = array(
    "robots" => "index, follow"
 );
