@@ -142,19 +142,11 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                         <div class="box-content d-flex align-items-center justify-content-between">
                             <div class="logo">
                                 <a <?if(!$isMainPage):?> href="<?=SITE_DIR?>" <?endif;?> class="logo-nav">
+
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['header_logo1']);?>
                                     <?if (stristr($path, '.svg')):?>
-                                        <?
-                                        $img_file = $path;
-
-                                        $svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-                                        if($svg['id']){
-                                            $img_grup = $img_file.'#'.$svg['id'];
-                                        }
-
-                                        $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-                                        print_r($svg_file);
-                                        ?>
+                                        <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                        <?print_r($svg_file);?>
                                     <?else:?>
                                         <img class="img-fluid one" src=<?=$path?> alt="01 Logo">
                                     <?endif;?>
@@ -163,20 +155,12 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
 
                                     <?$path = CFile::GetPath($GLOBALS['global_info']['header_logo2']);?>
                                     <?if (stristr($path, '.svg')):?>
-                                        <?
-                                        $img_file = $path;
-
-                                        $svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-                                        if($svg['id']){
-                                            $img_grup = $img_file.'#'.$svg['id'];
-                                        }
-
-                                        $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-                                        print_r($svg_file);
-                                        ?>
+                                        <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                        <?print_r($svg_file);?>
                                     <?else:?>
-                                        <img class="img-fluid two" src=<?=$path?> alt="02 Logo">
+                                        <img class="img-fluid two" src=<?=$path?> alt="01 Logo">
                                     <?endif;?>
+
                                 </a>
 
                                 <a href="#open-nav-bar-menu" class="open-nav-bar" id="open-nav-bar">
@@ -212,14 +196,8 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                                     <div class="info-nav-image">
                                         <?$path = CFile::GetPath($GLOBALS["global_info"]["header_calltoaction_icon"]);?>
                                         <?if (stristr($path, '.svg')):?>
-                                            <?
-                                            $img_file = $path;
-                                            $svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-                                            if($svg['id']){
-                                                $img_grup = $img_file.'#'.$svg['id'];
-                                            }
-                                            $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-                                            print_r($svg_file);?>
+                                            <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                            <?print_r($svg_file);?>
                                         <?else:?>
                                             <img src=<?=$path?>>
                                         <?endif;?>
@@ -245,21 +223,11 @@ $GLOBALS += CJusticeMain::MainProperty($GLOBALS["codekeepers_block_id"]["setting
                         <a href="<?=SITE_DIR?>" class="logo">
                             <?$path = CFile::GetPath($GLOBALS['global_info']['header_logo2']);?>
                             <?if (stristr($path, '.svg')):?>
-                                <?
-                                $img_file = $path;
-
-                                $svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-                                if($svg['id']){
-                                    $img_grup = $img_file.'#'.$svg['id'];
-                                }
-
-                                $svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-                                print_r($svg_file);
-                                ?>
+                                <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                <?print_r($svg_file);?>
                             <?else:?>
                                 <img class="img-fluid two" src=<?=$path?> alt="02 Logo">
                             <?endif;?>
-
                         </a>
                         
                         <p><?=$GLOBALS["global_info"]["header_extra_description"];?></p>    

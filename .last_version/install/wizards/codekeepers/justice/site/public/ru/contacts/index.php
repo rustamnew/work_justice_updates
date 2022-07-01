@@ -43,21 +43,12 @@ $APPLICATION->SetTitle("Контакты");
                     <li class="clearfix">
                         <div class="wrap-icon">
 							<?$path = CFile::GetPath($GLOBALS['global_info']['icon_phone']);?>
-
-							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);?>
-							<?else:?>
-								<img src=<?=$path?>>
-							<?endif;?>
+                            <?if (stristr($path, '.svg')):?>
+                                <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                <?print_r($svg_file);?>
+                            <?else:?>
+                                <img src=<?=$path?>>
+                            <?endif;?>
                         </div>
                         <div class="wrap-info">
                             <h3><?=$GLOBALS['global_info']['title_phone'];?></h3>
@@ -72,20 +63,12 @@ $APPLICATION->SetTitle("Контакты");
                         <div class="wrap-icon">
 							<?$path = CFile::GetPath($GLOBALS['global_info']['icon_email']);?>
 
-							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);?>
-							<?else:?>
-								<img src=<?=$path?>>
-							<?endif;?>
+                            <?if (stristr($path, '.svg')):?>
+                                <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                <?print_r($svg_file);?>
+                            <?else:?>
+                                <img src=<?=$path?>>
+                            <?endif;?>
                         </div>
                         <div class="wrap-info">
                             <h3><?=$GLOBALS['global_info']['title_email'];?></h3>
@@ -100,20 +83,12 @@ $APPLICATION->SetTitle("Контакты");
                         <div class="wrap-icon">
 							<?$path = CFile::GetPath($GLOBALS['global_info']['icon_address']);?>
 
-							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);?>
-							<?else:?>
-								<img src=<?=$path?>>
-							<?endif;?>
+                            <?if (stristr($path, '.svg')):?>
+                                <?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+                                <?print_r($svg_file);?>
+                            <?else:?>
+                                <img src=<?=$path?>>
+                            <?endif;?>
                         </div>
                         <div class="wrap-info">
                             <h3><?=$GLOBALS['global_info']['title_address'];?></h3>

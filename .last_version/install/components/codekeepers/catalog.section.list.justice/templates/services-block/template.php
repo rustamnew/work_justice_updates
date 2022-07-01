@@ -40,7 +40,7 @@ $this->setFrameMode(true);
 				<div class="row services-sections-row<?if($countRow === 1):?> active<?endif;?>" data-number-row="<?=$countRow?>">
 					<?
 					$arSelect = Array("ID", "NAME", "DETAIL_PAGE_URL", "PREVIEW_TEXT");
-					$arFilter = Array("IBLOCK_ID"=>$arItem["IBLOCK_ID"], "IBLOCK_SECTION_ID"=> $arItem["ID"], "GLOBAL_ACTIVE"=>"Y");
+					$arFilter = Array("IBLOCK_ID"=>$arItem["IBLOCK_ID"], "IBLOCK_SECTION_ID"=> $arItem["ID"], "GLOBAL_ACTIVE"=>"Y", "ACTIVE"=>"Y");
 					$res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter, false, false, $arSelect);
 				
 					while($ob = $res->GetNextElement()) {
@@ -50,46 +50,36 @@ $this->setFrameMode(true);
 								<div class="practice-area-item services-sections-block-item">
 									<?
 									$_res = CIBlockElement::GetByID($arFields["ID"]);
+
+
+
 									if($item = $_res->GetNext()) {
 										$props = CIBlockElement::GetByID($arFields["ID"])->GetNextElement()->GetProperties();?>
 										
-										
 										<?$path = CFile::GetPath($props["icon"]["VALUE"]);?>
 
-										<?
-										$img_file = $path;
-										$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-										if($svg['id']){
-											$img_grup = $img_file.'#'.$svg['id'];
-										}
-										$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-										?>
-
 										<?if (stristr($path, '.svg')):?>
+											<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+
 											<div class="practice-area-image">
 												<?print_r($svg_file);?>
 											</div>
-										<?else:?>
-											<div class="practice-area-image">
-												<img src="<?$path?>" alt="icon">
-											</div>
+										<?elseif($path):?>
+												<div class="practice-area-image">
+													<img src="<?=$path;?>" alt="icon">
+												</div>
 										<?endif;?>
 				
 										<div class="content">
 											<h4><?=$arFields["NAME"]?></h4>
 											<p>
-												<?if($arParams["TEXT_LENGTH"]):?>
-													<?if(iconv_strlen($arFields["PREVIEW_TEXT"]) > $arParams["TEXT_LENGTH"]):?>
-														<?=mb_substr($arFields["PREVIEW_TEXT"], 0, $arParams["TEXT_LENGTH"] ).'...'?>
-													<?else:?>
-														<?=$arFields["PREVIEW_TEXT"];?>
-													<?endif;?>
-												<?else:?>
-													<?=$arFields["PREVIEW_TEXT"];?>
-												<?endif;?>
+												<?=$arFields["PREVIEW_TEXT"];?>
 											</p>
 										</div>
 									<?}?>
+
+
+
 								</div>
 							</a>
 						</div>

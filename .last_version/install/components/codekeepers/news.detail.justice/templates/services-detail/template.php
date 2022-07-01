@@ -17,9 +17,11 @@ $this->setFrameMode(true);
 <div class="single-practice-areas-box">
 	<div class="img-box">
 		<img class="img-fluid" src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>" alt="01 Blog">
-		<ul>
-			<li><a class="price-detail"><?=$arResult["PROPERTIES"]["price"]["VALUE"]?></a></li>
-		</ul>
+		<?if($arResult["PROPERTIES"]["price"]["VALUE"]):?>
+			<ul>
+				<li><a class="price-detail"><?=$arResult["PROPERTIES"]["price"]["VALUE"]?></a></li>
+			</ul>
+		<?endif;?>
 	</div>
 	<h3><?=$arResult["NAME"]?></h3>
 	<p class="services-detail-text"><?=$arResult["DETAIL_TEXT"]?></p>

@@ -34,21 +34,12 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 						<div class="case-about">
 							<div class="case-about-image">
 								<?$path = CFile::GetPath($arItem['PROPERTIES']['case_icon']['VALUE']);?>
-
+								
 								<?if (stristr($path, '.svg')):?>
-									<?
-									$img_file = CFile::GetPath($arItem['PROPERTIES']['case_icon']['VALUE']);
-
-									$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-									if($svg['id']){
-										$img_grup = $img_file.'#'.$svg['id'];
-									}
-
-									$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-									print_r($svg_file);
-									?>
+									<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+									<?print_r($svg_file);?>
 								<?else:?>
-									<img src=<?echo CFile::GetPath($arItem["PROPERTIES"]["case_icon"]["VALUE"]);?>>
+									<img src=<?=$path?>>
 								<?endif;?>
 							</div>
 

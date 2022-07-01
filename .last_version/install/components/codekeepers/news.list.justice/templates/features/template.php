@@ -28,21 +28,12 @@ $this->setFrameMode(true);
 
 						<?if (stristr($path, '.svg')):?>
 							<div class="features-image">
-								<?
-								$img_file = CFile::GetPath($arItem['PROPERTIES']['icon']['VALUE']);
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);
-								?>
+								<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+								<?print_r($svg_file);?>
 							</div>
 						<?else:?>
 							<div class="features-image">
-								<img src="<?echo CFile::GetPath($arItem["PROPERTIES"]["icon"]["VALUE"]);?>">
+								<img src=<?=$path?>>
 							</div>
 						<?endif;?>
 

@@ -26,7 +26,9 @@ $this->setFrameMode(true);
 			
 			<div class="item-content">
 				<h5><a href="<?=$arItem["DETAIL_PAGE_URL"]?>"><?=$arItem["NAME"]?></a></h5>
-				<a class="btn-service-price"><?=$arItem["PROPERTIES"]["price"]["VALUE"]?></a>
+
+				<?if($arItem["PROPERTIES"]["price"]["VALUE"]):?><a class="btn-service-price"><?=$arItem["PROPERTIES"]["price"]["VALUE"]?></a><?endif;?>
+				
 				<p><?=$arItem["PREVIEW_TEXT"]?></p>
 			</div>
 		</li>

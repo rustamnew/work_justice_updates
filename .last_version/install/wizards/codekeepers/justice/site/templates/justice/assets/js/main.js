@@ -672,14 +672,6 @@ $(document).ready(function () {
     //Закрытие формы
     let formWrap = document.querySelector('#summonedFormWrap')
 
-    let closeFancybox = (e) => {
-        if (e) {
-            e.preventDefault()
-        }
-        
-        formWrap.classList.remove('active')
-    }
-
     formWrap.addEventListener('click', (e) => {
         if(e.target.id === 'summonedFormWrap') {
             closeFancybox(e)
@@ -725,6 +717,15 @@ $(document).ready(function () {
 ///////////////////////////////////////////
 
 
+
+let closeFancybox = (e) => {
+    let formWrap = document.querySelector('#summonedFormWrap')
+    if (e) {
+        e.preventDefault()
+    }
+    
+    formWrap.classList.remove('active')
+}
 
 //custom sidebar sections
 

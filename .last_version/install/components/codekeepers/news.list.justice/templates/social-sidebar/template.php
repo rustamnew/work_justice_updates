@@ -29,19 +29,10 @@ $this->setFrameMode(true);
 					<li>
 						<a class="icon" href="<?=$GLOBALS["global_info"]["social1_link"];?>">
 							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);
-								?>
+								<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+								<?print_r($svg_file);?>
 							<?else:?>
-								<img src=<?echo $path;?>>
+								<img src=<?=$path?>>
 							<?endif;?>
 						</a>
 					</li>
@@ -53,19 +44,10 @@ $this->setFrameMode(true);
 					<li>
 						<a class="icon" href="<?=$GLOBALS["global_info"]["social2_link"];?>">
 							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);
-								?>
+								<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+								<?print_r($svg_file);?>
 							<?else:?>
-								<img src=<?echo $path;?>>
+								<img src=<?=$path?>>
 							<?endif;?>
 						</a>
 					</li>
@@ -77,19 +59,10 @@ $this->setFrameMode(true);
 					<li>
 						<a class="icon" href="<?=$GLOBALS["global_info"]["social3_link"];?>">
 							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);
-								?>
+								<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+								<?print_r($svg_file);?>
 							<?else:?>
-								<img src=<?echo $path;?>>
+								<img src=<?=$path?>>
 							<?endif;?>
 						</a>
 					</li>
@@ -101,19 +74,10 @@ $this->setFrameMode(true);
 					<li>
 						<a class="icon" href="<?=$GLOBALS["global_info"]["social4_link"];?>">
 							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);
-								?>
+								<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+								<?print_r($svg_file);?>
 							<?else:?>
-								<img src=<?echo $path;?>>
+								<img src=<?=$path?>>
 							<?endif;?>
 						</a>
 					</li>
@@ -125,19 +89,10 @@ $this->setFrameMode(true);
 					<li>
 						<a class="icon" href="<?=$GLOBALS["global_info"]["social5_link"];?>">
 							<?if (stristr($path, '.svg')):?>
-								<?
-								$img_file = $path;
-
-								$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-								if($svg['id']){
-									$img_grup = $img_file.'#'.$svg['id'];
-								}
-
-								$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-								print_r($svg_file);
-								?>
+								<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+								<?print_r($svg_file);?>
 							<?else:?>
-								<img src=<?echo $path;?>>
+								<img src=<?=$path?>>
 							<?endif;?>
 						</a>
 					</li>

@@ -1435,6 +1435,8 @@ header.navs.active{
 }
 .practice-area-item .content p{
     margin-bottom: 0;
+    max-height: 200px;
+    overflow: hidden;
 }
 .practice-area-item .content a{
     margin-top: 20px;

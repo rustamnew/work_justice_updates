@@ -37,14 +37,10 @@ $this->setFrameMode(true);
 				<?$section_link = $ar_result["SECTION_PAGE_URL"];?>
 
 				<?if (stristr($path, '.svg')):?>
-					<?
-					$img_file = $path;
-					$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-					if($svg['id']){
-						$img_grup = $img_file.'#'.$svg['id'];
-					}
-					$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-					?>
+					<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+					<?print_r($svg_file);?>
+				<?else:?>
+					<img src=<?=$path?>>
 				<?endif;?>
 
 				<div class="col-md-6 col-lg-4">
@@ -55,7 +51,7 @@ $this->setFrameMode(true);
 							</div>
 						<?else:?>
 							<div class="practice-area-image">
-								<img src="<?$path?>" alt="icon">
+								<img src="<?=$path?>" alt="icon">
 							</div>
 						<?endif;?>
 

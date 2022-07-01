@@ -134,17 +134,8 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 								<div class="quote-icon">
 									<?$path = CFile::GetPath($arItem["PROPERTIES"]["phone_icon"]["VALUE"]);?>
 									<?if (stristr($path, '.svg')):?>
-										<?
-										$img_file = $path;
-
-										$svg = new SimpleXMLElement( file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file));
-										if($svg['id']){
-											$img_grup = $img_file.'#'.$svg['id'];
-										}
-
-										$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$img_file);
-										print_r($svg_file);
-										?>
+										<?$svg_file = file_get_contents( $_SERVER["DOCUMENT_ROOT"].$path);?>
+										<?print_r($svg_file);?>
 									<?else:?>
 										<img src=<?=$path?>>
 									<?endif;?>
