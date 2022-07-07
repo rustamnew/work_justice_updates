@@ -5273,3 +5273,7 @@ h5 {
     padding-left: 0;
     padding-right: 0;
 }
+
+.history.history-2 .container > .row:nth-child(2) {
+    justify-content: center;
+}
