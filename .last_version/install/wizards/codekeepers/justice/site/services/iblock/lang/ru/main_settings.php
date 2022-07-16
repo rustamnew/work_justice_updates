@@ -93,4 +93,5 @@ $MESS["WZD_OPTION_81"] = "Основной цвет";
 $MESS["WZD_OPTION_82"] = "Дополнительный цвет";
 $MESS["WZD_OPTION_83"] = "Дополнительный цвет 2";
 $MESS["WZD_OPTION_84"] = "Цвет для темной темы";
+$MESS["WZD_OPTION_85"] = "Цвет overlay";
 ?>

@@ -30,7 +30,7 @@ $this->setFrameMode(true);
 						"COUNT_ELEMENTS" => "N",	
 						"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	
 						"FILTER_NAME" => "sectionsFilter",	
-						"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_services_id"],	
+						"IBLOCK_ID" => $arParams["IBLOCK_ID"],	
 						"IBLOCK_TYPE" => "content",	
 						"SECTION_CODE" => "",	
 						"SECTION_FIELDS" => array(	

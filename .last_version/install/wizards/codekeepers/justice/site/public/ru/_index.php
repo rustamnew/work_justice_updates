@@ -76,9 +76,9 @@ $APPLICATION->SetTitle('Justice - готовый сайт для юридических компаний, юристов
 		"COUNT_ELEMENTS_FILTER" => "CNT_ACTIVE",	// Показывать количество
 		"FILTER_NAME" => "sectionsFilter",	// Имя массива со значениями фильтра разделов
 		"IBLOCK_ID" => $GLOBALS["codekeepers_block_id"]["content_services_id"],	// Инфоблок
-		"IBLOCK_TYPE" => "content",	// Тип инфоблока
-		"SECTION_CODE" => "",	// Код раздела
-		"SECTION_FIELDS" => array(	// Поля разделов
+		"IBLOCK_TYPE" => "content",
+		"SECTION_CODE" => "",
+		"SECTION_FIELDS" => array(
 			0 => "",
 			1 => "",
 		),

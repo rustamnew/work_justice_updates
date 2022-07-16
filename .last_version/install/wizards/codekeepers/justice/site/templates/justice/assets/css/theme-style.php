@@ -2,6 +2,7 @@
 $color1 = $GLOBALS['global_info']['color1'];
 $color2 = $GLOBALS['global_info']['color2'];
 $color3 = $GLOBALS['global_info']['color3'];
+$colorOverlay = $GLOBALS['global_info']['color_overlay'];
 ?>
 <style type="text/css">
     ::-moz-selection {
@@ -337,4 +338,7 @@ $color3 = $GLOBALS['global_info']['color3'];
         color: <?=$color1;?>;
         background-color: <?=$color2;?>;
     }
+    .overlay {
+		background-color: <?=$colorOverlay;?>;
+	}
 </style>
